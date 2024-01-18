@@ -6,9 +6,9 @@ const RIGHTKEY = "Move: right";
 let connection;
 
 const msg = "Say: ";
-const hello = "Hello there!";
-const stay = "Stay a while...";
-const listen = "...and listen!";
+const hello = "Hello!";
+const stay = "Stay!";
+const listen = "Listen!";
 
 const setupInput = function(conn) {
   connection = conn;
@@ -32,7 +32,7 @@ const handleUserInput = (key) => {
     }, 100);
   };
   if (key === '\u0003') {
-    stdout.write("Exited snek game. Bye bye.\n");
+    stdout.write("Exited sneak game.\n");
     process.exit();
   }
   if (key === 'w') {
@@ -50,15 +50,6 @@ const handleUserInput = (key) => {
   if (key === 'd') {
     clearInterval(func);
     interval(RIGHTKEY);
-  }
-  if (key === "h") {
-    connection.write(msg + hello);
-  }
-  if (key === "j") {
-    connection.write(msg + stay);
-  }
-  if (key === 'k') {
-    connection.write(msg + listen);
   }
 };
 
