@@ -51,6 +51,15 @@ const handleUserInput = (key) => {
     clearInterval(func);
     interval(RIGHTKEY);
   }
+  if (key === "h") {
+    connection.write(msg + hello);
+  }
+  if (key === "t") {
+    connection.write(msg + stay);
+  }
+  if (key === 'l') {
+    connection.write(msg + listen);
+  }
 };
 
 module.exports = { setupInput };
